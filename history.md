@@ -222,4 +222,9 @@ http://www.hearushereapp.com/
 
 ![Embassies](https://img2.storyblok.com/0x/filters:format(webp):quality(90)/f/146375/x/d506e98cc3/team-desktop.svg)
 
+### Meta, 2021
+
+Facebook rebrands as Meta
+![Meta](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Meta_Platforms_Inc._logo.svg/440px-Meta_Platforms_Inc._logo.svg.png)
+
 
