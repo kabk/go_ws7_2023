@@ -4,6 +4,38 @@ A workshop hosted by James Bryan Graves & Kees van Drongelen 16—20 JANUARY 202
 
 This repository contains code examples & resources used during the course of the workshop.
 
+## Goals
+
+Each student will make a virtual space (metaspace) in Roblox, which can visited by other students.
+
+We will create a mechanism to collect "labor" into a virtual "currency".
+
+The currency will be stored in a centeral server.
+
+Students will then spend the currency in the virtual spaces.
+
+## Roblox
+
+Create an account at roblox.com
+
+Download Roblox Studio, at roblox.com/create
+
+Open Roblox Studio, and create a template world, and make it your own.  I would recommend using online resources like YouTube, to assist in helping you to do what you need (scaling, importing objects, etc.).
+
+## Server
+
+Can be run by installing [Nodejs](https://nodejs.org/en/)
+
+and running the server code in this repository as follows:
+
+```
+$ npm install
+```
+
+```
+$ node index.js
+```
+
 ## Contents
 
 ### history.md
