@@ -3,15 +3,16 @@ print("Hello world!")
 local HttpService = game:GetService("HttpService")
 
 -- The server URL
-local URL = "http://localhost:3000"
+local URL = "http://localhost:3000/"
 
-local function doGet()
+
+local function doGet(userId)
 	local response
 	local data
 
 	-- Use pcall in case something goes wrong
 	pcall(function()
-		response = HttpService:GetAsync(URL)
+		response = HttpService:GetAsync(URL .. "userId=" .. userId)
 		data = HttpService:JSONDecode(response)
 	end)
 
@@ -33,9 +34,9 @@ local function doGet()
 
 end
 
-local function doPost()
+local function doPost(userId)
 	local dataFields = {
-		["val"] = "3",
+		["userId"] = userId,
 	}
 	
 	local data = ""
@@ -54,10 +55,15 @@ local function doPost()
 	print(response)
 end
 
-if doGet() then
-	print("Success")
-else
-	print("Something went wrong")
-end
+game:GetService("Players").PlayerAdded:Connect(function(player)
+	local userId = player.UserId
+	print("USER!", userId)
 
-doPost()
+	if doGet(userId) then
+		print("Success")
+	else
+		print("Something went wrong")
+	end
+	
+	doPost(userId)
+end)
