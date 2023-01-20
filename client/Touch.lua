@@ -5,11 +5,14 @@ local PlayerService = game:GetService("Players")
 local HttpService = game:GetService("HttpService")
 
 -- The server URL
-local URL = "http://localhost:3000/"
+local URL = "http://213.108.110.122:3001/"
 
-local function doPost(userId)
+local creatorId = game.CreatorId
+
+local function doPost(fromUserId, toUserId)
 	local dataFields = {
-		["userId"] = userId,
+		["fromUserId"] = fromUserId,
+		["toUserId"] = toUserId,
 	}
 
 	local data = ""
@@ -33,7 +36,7 @@ local function onTouched(hit)
 	local player = game.Players:GetPlayerFromCharacter(hit.Parent)
 	print(player.Name)
 	local userId = PlayerService:GetUserIdFromNameAsync(player.Name)
-	doPost(userId)
+	doPost(userId, creatorId)
 end
 
 part.Touched:Connect(onTouched)
